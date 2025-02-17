@@ -1,6 +1,7 @@
 "use client";
 // libs
 import styled from "@emotion/styled";
+import { useState } from "react";
 
 // components
 import AboutMeSection from "~/components/section/AboutMeSection";
@@ -10,19 +11,43 @@ import HomeSection from "~/components/section/HomeSection";
 import SkillSection from "~/components/section/SkillSection";
 
 export default function Home() {
-  /**
-   * change menu background color if current focus on section with menu id
-   **/
+  const [currentMenu, setCurrentMenu] = useState("home");
+
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
+    setCurrentMenu(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
     }
   };
 
+  const handleClickPrev = () => {
+    if (currentMenu === "about-me") {
+      scrollToSection("home");
+    } else if (currentMenu === "skills") {
+      scrollToSection("about-me");
+    } else if (currentMenu === "blog") {
+      scrollToSection("skills");
+    } else if (currentMenu === "contact") {
+      scrollToSection("blog");
+    }
+  };
+
+  const handleClickNext = () => {
+    if (currentMenu === "home") {
+      scrollToSection("about-me");
+    } else if (currentMenu === "about-me") {
+      scrollToSection("skills");
+    } else if (currentMenu === "skills") {
+      scrollToSection("blog");
+    } else if (currentMenu === "blog") {
+      scrollToSection("contact");
+    }
+  };
+
   return (
     <PageWrapper>
-      <MenuLeftWrapper>
+      <MenuLeftWrapper className="hidden md:flex">
         <a className="menu-header">THINNAKRIT</a>
         <a className="menu-sub" onClick={() => scrollToSection("home")}>
           HOME
@@ -40,6 +65,26 @@ export default function Home() {
           CONTACT
         </a>
       </MenuLeftWrapper>
+      <div
+        className="flex md:hidden flex-col justify-center items-center
+      fixed bottom-5 left-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
+      font-bold border-1 border-solid border-black
+      z-50
+      "
+        onClick={handleClickPrev}
+      >
+        Prev
+      </div>
+      <div
+        className="flex md:hidden flex-col justify-center items-center
+      fixed bottom-5 right-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
+      font-bold border-1 border-solid border-black
+      z-50
+      "
+        onClick={handleClickNext}
+      >
+        Next
+      </div>
       <ContentWrapper>
         <div id="home">
           <HomeSection />
@@ -70,7 +115,6 @@ const PageWrapper = styled.div`
 
 const MenuLeftWrapper = styled.div`
   position: relative;
-  display: flex;
   flex-direction: column;
   width: 100px;
   height: 100dvh;

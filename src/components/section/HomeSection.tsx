@@ -16,12 +16,15 @@ const HomeSection = () => {
   ];
   return (
     <HomeSectionWrapper className="h-screen">
-      <div className="home-section">
+      <div className="home-section flex-col md:flex-row">
         <div className="home-section-left">
           <div className="home-section-left-content">
             <div className="hello-message">Hello there...</div>
-            <h1>Thinnakrit Knoo-Aksorn</h1>
-            <div>
+            <h1 className="hidden gap-4 flex-row md:flex ">
+              <span>Thinnakrit</span>
+              <span>Knoo-Aksorn</span>
+            </h1>
+            <div className="text-[16px] md:text-[24px]">
               <TypingTextContainer>
                 <span>I Am Passionate</span>
                 <TypingEffect messages={messages} />
@@ -43,7 +46,14 @@ const HomeSection = () => {
             </div>
           </div>
         </div>
-        <div className="home-section-right">
+        <div className="home-section-right relative z-10">
+          <div
+            className="block md:hidden absolute z-20 bg-white top-0 text-[24px] border-1
+          border-solid border-black p-2 shadow-xl font-bold px-8 right-0
+          "
+          >
+            Thinnakrit Knoo-Aksorn
+          </div>
           <img className="me-photo" src="/me.png" />
         </div>
       </div>
@@ -54,7 +64,6 @@ const HomeSection = () => {
 export default HomeSection;
 
 const TypingTextContainer = styled.div`
-  font-size: 24px;
   display: flex;
   flex-direction: row;
   gap: 16px;
@@ -78,7 +87,6 @@ const HomeSectionWrapper = styled.section`
 
   .home-section {
     display: flex;
-    flex-direction: row;
     .home-section-right {
       display: flex;
       flex-direction: column;

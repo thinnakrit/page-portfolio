@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 
 const AboutMeSection = () => {
   return (
-    <AboutMeSectionWrapper className="min-h-screen max-h-screen">
+    <AboutMeSectionWrapper className="min-h-screen">
       <h1 className="font-bold text-[32px]">ABOUT ME</h1>
       <div className="head-line"></div>
       <div className="about-me-content">
@@ -13,7 +13,7 @@ const AboutMeSection = () => {
         <br />
         WITH A PASSION FOR DESIGN AND DEVELOPMENT
       </div>
-      <div className="about-me-detail">
+      <div className="about-me-detail flex-col md:flex-row">
         <div className="about-me-detail-photo">
           <div className="about-me-detail-social">
             <div className="about-me-detail-social-icon">
@@ -37,7 +37,7 @@ const AboutMeSection = () => {
             about building scalable web and mobile applications. Proficient in
             React, Next.js, Flutter, Nodejs, Nestjs, web3 and Kotlin 🚀
           </div>
-          <div className="about-me-detail-description-detail">
+          <div className="about-me-detail-description-detail grid grid-cols-1 md:grid-cols-2">
             <div>
               <span className="title">Birthday</span>
               <span>29th may 1993</span>
@@ -53,10 +53,6 @@ const AboutMeSection = () => {
             <div>
               <span className="title">Phone</span>
               <span>+6695-464-6362</span>
-            </div>
-            <div>
-              <span className="title">Residence</span>
-              <span>Thailand</span>
             </div>
             <div>
               <span className="title">Address</span>
@@ -86,10 +82,6 @@ const AboutMeSectionWrapper = styled.section`
   }
 
   .about-me-detail-description-detail {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-
     div {
       display: flex;
       flex-direction: row;
@@ -99,7 +91,7 @@ const AboutMeSectionWrapper = styled.section`
       .title,
       span {
         display: flex;
-        flex: 2;
+        flex: 3;
         text-align: left;
         align-items: flex-start;
       }
@@ -108,6 +100,7 @@ const AboutMeSectionWrapper = styled.section`
         font-weight: bold;
         flex: 1;
         border-right: 1px solid #9b9b9bff;
+        padding-right: 14px;
       }
     }
   }
@@ -119,7 +112,6 @@ const AboutMeSectionWrapper = styled.section`
   .about-me-detail {
     position: relative;
     display: flex;
-    flex-direction: row;
     gap: 80px;
   }
 

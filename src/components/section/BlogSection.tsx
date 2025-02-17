@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 
 const BlogSection = () => {
   return (
-    <BlogSectionWrapper className="min-h-screen max-h-screen">
+    <BlogSectionWrapper className="min-h-screen">
       <h1 className="font-bold text-[32px]">MY BLOGS</h1>
       <div className="head-line"></div>
     </BlogSectionWrapper>

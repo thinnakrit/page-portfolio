@@ -79,17 +79,17 @@ const SkillSection = () => {
   ];
 
   return (
-    <SkillSectionWrapper className="min-h-screen max-h-screen">
+    <SkillSectionWrapper className="min-h-screen">
       <h1 className="font-bold text-[32px]">MY SKILLS</h1>
       <div className="head-line"></div>
-      <div className="skill-content">
-        <div className="skill-content-item">
+      <div className="skill-content grid grid-cols-1 md:grid-cols-2 gap-16">
+        <div className="flex flex-col">
           <div className="font-bold text-[24px]">Programming skill</div>
-          <div className="!grid !grid-cols-12 gap-16 gap-y-4 relative">
+          <div className="grid grid-cols-6 md:grid-cols-12 gap-4 gap-y-4 relative">
             {skillList.map((skill, index) => (
               <div
                 key={index}
-                className="!col-span-6 flex flex-row p-2 border-2 border-gray-200 rounded-md justify-center
+                className="col-span-6 flex flex-row p-2 border-2 border-gray-200 rounded-md justify-center
             items-center gap-4 hover:border-[#f28500cc] hover:text-[#a25b05cc] hover:font-bold"
               >
                 <div className="flex justify-center items-center skill-item-logo w-[50px] h-[50px]">
@@ -103,13 +103,13 @@ const SkillSection = () => {
             ))}
           </div>
         </div>
-        <div className="skill-content-item">
+        <div className="flex flex-col">
           <div className="font-bold text-[24px]">Soft skill</div>
-          <div className="!grid !grid-cols-6 gap-16 gap-y-4 relative">
+          <div className="grid grid-cols-1 gap-16 gap-y-4 relative">
             {softSkillList.map((skill, index) => (
               <div
                 key={index}
-                className="!col-span-6 flex flex-col p-2 border-2 border-gray-200 rounded-md gap-2 hover:border-[#f28500cc] hover:text-[#a25b05cc]"
+                className="flex flex-col p-2 border-2 border-gray-200 rounded-md gap-2 hover:border-[#f28500cc] hover:text-[#a25b05cc]"
               >
                 <div className="skill-item-name text-[16px] font-bold">
                   {skill.name}
@@ -139,18 +139,5 @@ const SkillSectionWrapper = styled.section`
     height: 2px;
     background: #f28500cc;
     margin: 20px 0;
-  }
-
-  .skill-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 100px;
-
-    .skill-content-item {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      text-align: left;
-    }
   }
 `;

@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 
 const ContactSection = () => {
   return (
-    <ContactSectionWrapper className="min-h-screen max-h-screen">
+    <ContactSectionWrapper className="min-h-screen">
       <h1 className="font-bold text-[32px]">Get in touch</h1>
       <div className="head-line"></div>
     </ContactSectionWrapper>
