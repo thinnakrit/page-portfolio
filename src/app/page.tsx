@@ -102,7 +102,10 @@ const MenuLeftWrapper = styled.div`
 const ContentWrapper = styled.div`
   overflow: scroll;
   width: 100%;
-  max-height: 100dvh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 const SkillSectionWrapper = styled.section``;
