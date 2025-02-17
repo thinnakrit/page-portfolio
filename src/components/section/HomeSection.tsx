@@ -15,7 +15,7 @@ const HomeSection = () => {
     "Kotlin  ",
   ];
   return (
-    <HomeSectionWrapper className="h-screen">
+    <HomeSectionWrapper className="min-h-screen">
       <div className="home-section flex-col md:flex-row">
         <div className="home-section-left">
           <div className="home-section-left-content">
