@@ -49,23 +49,26 @@ export default function Home() {
     <PageWrapper>
       <MenuLeftWrapper className="hidden md:flex">
         <a className="menu-header">THINNAKRIT</a>
-        <a className="menu-sub" onClick={() => scrollToSection("home")}>
+        <button className="menu-sub" onClick={() => scrollToSection("home")}>
           HOME
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("about-me")}>
+        </button>
+        <button
+          className="menu-sub"
+          onClick={() => scrollToSection("about-me")}
+        >
           ABOUT ME
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("skills")}>
+        </button>
+        <button className="menu-sub" onClick={() => scrollToSection("skills")}>
           SKILLS
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("blog")}>
+        </button>
+        <button className="menu-sub" onClick={() => scrollToSection("blog")}>
           BLOG
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("contact")}>
+        </button>
+        <button className="menu-sub" onClick={() => scrollToSection("contact")}>
           CONTACT
-        </a>
+        </button>
       </MenuLeftWrapper>
-      <div
+      <button
         className="flex md:hidden flex-col justify-center items-center
       fixed bottom-5 left-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
       font-bold border-1 border-solid border-black
@@ -74,8 +77,8 @@ export default function Home() {
         onClick={handleClickPrev}
       >
         Prev
-      </div>
-      <div
+      </button>
+      <button
         className="flex md:hidden flex-col justify-center items-center
       fixed bottom-5 right-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
       font-bold border-1 border-solid border-black
@@ -84,7 +87,7 @@ export default function Home() {
         onClick={handleClickNext}
       >
         Next
-      </div>
+      </button>
       <ContentWrapper>
         <div id="home">
           <HomeSection />
