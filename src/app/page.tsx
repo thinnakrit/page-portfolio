@@ -5,31 +5,24 @@ import styled from "@emotion/styled";
 // components
 import AboutMeSection from "~/components/section/AboutMeSection";
 import HomeSection from "~/components/section/HomeSection";
+import SkillSection from "~/components/section/SkillSection";
 
 export default function Home() {
   return (
     <PageWrapper>
       <MenuLeftWrapper>
-        <div className="menu-header">THINNAKRIT</div>
-        <div className="menu-sub">HOME</div>
-        <div className="menu-sub">ABOUT ME</div>
-        <div className="menu-sub">SKILLS</div>
-        <div className="menu-sub">PORTFOLIO</div>
-        <div className="menu-sub">BLOG</div>
-        <div className="menu-sub">CONTACT</div>
+        <a className="menu-header">THINNAKRIT</a>
+        <a className="menu-sub">HOME</a>
+        <a className="menu-sub">ABOUT ME</a>
+        <a className="menu-sub">SKILLS</a>
+        <a className="menu-sub">PORTFOLIO</a>
+        <a className="menu-sub">BLOG</a>
+        <a className="menu-sub">CONTACT</a>
       </MenuLeftWrapper>
       <ContentWrapper>
         <HomeSection />
         <AboutMeSection />
-
-        <SkillSectionWrapper>
-          <h1>SKILLS</h1>
-          <div>xxxx</div>
-          <div>
-            <div>photo</div>
-            <div>xxx</div>
-          </div>
-        </SkillSectionWrapper>
+        <SkillSection />
 
         <WorkSectionWrapper>
           <h1>LATEST WORKS</h1>
@@ -107,8 +100,6 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const SkillSectionWrapper = styled.section``;
 
 const WorkSectionWrapper = styled.section``;
 
