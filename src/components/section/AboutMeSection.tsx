@@ -16,15 +16,27 @@ const AboutMeSection = () => {
       <div className="about-me-detail flex-col md:flex-row">
         <div className="about-me-detail-photo">
           <div className="about-me-detail-social">
-            <div className="about-me-detail-social-icon">
+            <a
+              className="about-me-detail-social-icon"
+              href="https://dev.to/thinnakrit"
+              target="_blank"
+            >
               <img src="/dev.to.png" />
-            </div>
-            <div className="about-me-detail-social-icon">
+            </a>
+            <a
+              className="about-me-detail-social-icon"
+              href="https://github.com/thinnakrit"
+              target="_blank"
+            >
               <img src="/github-logo.png" />
-            </div>
-            <div className="about-me-detail-social-icon">
+            </a>
+            <a
+              className="about-me-detail-social-icon"
+              href="https://www.linkedin.com/in/thinnakrit"
+              target="_blank"
+            >
               <img src="/linkedin.webp" />
-            </div>
+            </a>
           </div>
           <div className="about-me-detail-photo-source">
             <img src="/profile.jpg" className="p-0 m-0" />
