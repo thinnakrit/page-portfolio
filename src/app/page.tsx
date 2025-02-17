@@ -17,23 +17,6 @@ const AboutMeSection = dynamic(
 );
 
 export default function Home() {
-  const bounce = keyframes`
-  0% {
-    top: 5px;
-    opacity: 0;
-  }
-
-  30% {
-    top: 15px;
-    opacity: 1;
-  }
-
-  100% {
-    top: 25px;
-    opacity: 0;
-  }
-`;
-
   return (
     <PageWrapper>
       <MenuLeftWrapper>
