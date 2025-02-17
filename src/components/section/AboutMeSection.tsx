@@ -10,11 +10,7 @@ const AboutMeSection = () => {
   const { height } = useWindowDimensions();
 
   return (
-    <AboutMeSectionWrapper
-      style={{
-        height: height ?? "auto",
-      }}
-    >
+    <AboutMeSectionWrapper height={height ?? 0}>
       <h1>ABOUT ME</h1>
       <div>xxxx</div>
       <div>
@@ -29,7 +25,7 @@ export default AboutMeSection;
 
 const AboutMeSectionWrapper = styled.section`
   background: #e1e1e1ff;
-
   position: relative;
   z-index: 2;
+  ${({ height }: { height: number }) => `height: ${height}px;`}
 `;

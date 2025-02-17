@@ -14,11 +14,7 @@ const HomeSection = () => {
 
   const messages = ["React", "Nextjs", "Typescript", "Flutter", "Kotlin"];
   return (
-    <HomeSectionWrapper
-      style={{
-        height: height ?? "auto",
-      }}
-    >
+    <HomeSectionWrapper height={height ?? 0}>
       <div className="home-section">
         <div className="home-section-left">
           <div className="home-section-left-content">
@@ -72,6 +68,8 @@ const HomeSectionWrapper = styled.section`
   justify-content: center;
   position: relative;
   z-index: 1;
+  ${({ height }: { height: number }) => `height: ${height}px;`}
+
   .home-section {
     display: flex;
     flex-direction: row;

@@ -1,19 +1,10 @@
 "use client";
 // libs
 import styled from "@emotion/styled";
-import dynamic from "next/dynamic";
 
 // components
-const HomeSection = dynamic(() => import("~/components/section/HomeSection"), {
-  ssr: false,
-});
-
-const AboutMeSection = dynamic(
-  () => import("~/components/section/AboutMeSection"),
-  {
-    ssr: false,
-  }
-);
+import AboutMeSection from "~/components/section/AboutMeSection";
+import HomeSection from "~/components/section/HomeSection";
 
 export default function Home() {
   return (
