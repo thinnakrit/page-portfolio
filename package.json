@@ -8,7 +8,7 @@
     "export": "next export",
     "start": "next start",
     "lint": "next lint",
-    "deploy": "gh-pages -d out"
+    "deploy": "npm run build && touch ./out/_next/.nojekyll && gh-pages -d out -t"
   },
   "dependencies": {
     "@emotion/css": "^11.13.5",

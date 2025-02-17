@@ -4,52 +4,58 @@ import styled from "@emotion/styled";
 
 // components
 import AboutMeSection from "~/components/section/AboutMeSection";
+import BlogSection from "~/components/section/BlogSection";
+import ContactSection from "~/components/section/ContactSection";
 import HomeSection from "~/components/section/HomeSection";
 import SkillSection from "~/components/section/SkillSection";
 
 export default function Home() {
+  /**
+   * change menu background color if current focus on section with menu id
+   **/
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <PageWrapper>
       <MenuLeftWrapper>
         <a className="menu-header">THINNAKRIT</a>
-        <a className="menu-sub">HOME</a>
-        <a className="menu-sub">ABOUT ME</a>
-        <a className="menu-sub">SKILLS</a>
-        <a className="menu-sub">PORTFOLIO</a>
-        <a className="menu-sub">BLOG</a>
-        <a className="menu-sub">CONTACT</a>
+        <a className="menu-sub" onClick={() => scrollToSection("home")}>
+          HOME
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("about-me")}>
+          ABOUT ME
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("skills")}>
+          SKILLS
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("blog")}>
+          BLOG
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("contact")}>
+          CONTACT
+        </a>
       </MenuLeftWrapper>
       <ContentWrapper>
-        <HomeSection />
-        <AboutMeSection />
-        <SkillSection />
-
-        <WorkSectionWrapper>
-          <h1>LATEST WORKS</h1>
-          <div>xxxx</div>
-          <div>
-            <div>photo</div>
-            <div>xxx</div>
-          </div>
-        </WorkSectionWrapper>
-
-        <BlogSectionWrapper>
-          <h1>LATEST BLOGS</h1>
-          <div>xxxx</div>
-          <div>
-            <div>photo</div>
-            <div>xxx</div>
-          </div>
-        </BlogSectionWrapper>
-
-        <ContactSectionWrapper>
-          <h1>Get in touch</h1>
-          <div>xxxx</div>
-          <div>
-            <div>photo</div>
-            <div>xxx</div>
-          </div>
-        </ContactSectionWrapper>
+        <div id="home">
+          <HomeSection />
+        </div>
+        <div id="about-me">
+          <AboutMeSection />
+        </div>
+        <div id="skills">
+          <SkillSection />
+        </div>
+        <div id="blog">
+          <BlogSection />
+        </div>
+        <div id="contact">
+          <ContactSection />
+        </div>
       </ContentWrapper>
     </PageWrapper>
   );
@@ -63,6 +69,7 @@ const PageWrapper = styled.div`
 `;
 
 const MenuLeftWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   width: 100px;
@@ -70,6 +77,7 @@ const MenuLeftWrapper = styled.div`
   box-shadow: 0px 3px 10px 0px rgba(38, 59, 94, 0.29);
   text-align: center;
   font-size: 14px;
+  z-index: 9;
 
   .menu-header {
     background-color: #f28500cc;
@@ -100,9 +108,3 @@ const ContentWrapper = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-const WorkSectionWrapper = styled.section``;
-
-const BlogSectionWrapper = styled.section``;
-
-const ContactSectionWrapper = styled.section``;

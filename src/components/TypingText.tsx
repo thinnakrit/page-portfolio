@@ -8,7 +8,8 @@ interface TypingEffectProps {
 
 const TypingText = styled.div`
   display: inline-block;
-  text-decoration: underline;
+  border-bottom: 1px solid #333333;
+  border-right: 3px solid #333333;
 `;
 
 const TypingEffect: React.FC<TypingEffectProps> = ({ messages }) => {
@@ -17,29 +18,26 @@ const TypingEffect: React.FC<TypingEffectProps> = ({ messages }) => {
   const currentMessage = messages[currentMessageIndex];
 
   useEffect(() => {
-    let typingTimeout: NodeJS.Timeout;
-
-    const typeMessage = (message: string, index: number) => {
-      if (index < message.length) {
-        setDisplayedMessage((prev) => prev + message[index]);
-        typingTimeout = setTimeout(() => typeMessage(message, index + 1), 100);
+    // loop for messages infinite
+    // if current message is display success, delete each word and after delete all typing next message
+    const interval = setInterval(() => {
+      if (displayedMessage === currentMessage) {
+        let index = displayedMessage.length;
+        const deleteInterval = setInterval(() => {
+          if (index === 0) {
+            clearInterval(deleteInterval);
+            setCurrentMessageIndex((prev) => (prev + 1) % messages.length);
+          } else {
+            setDisplayedMessage((prev) => prev.slice(0, -1));
+            index--;
+          }
+        }, 100);
+      } else {
+        setDisplayedMessage((prev) => currentMessage.slice(0, prev.length + 1));
       }
-    };
-
-    if (currentMessage) {
-      setDisplayedMessage("");
-      typeMessage(currentMessage, 0);
-    }
-
-    const messageTimeout = setTimeout(() => {
-      setCurrentMessageIndex((prevIndex) => (prevIndex + 1) % messages.length);
-    }, currentMessage.length * 100 + 1000);
-
-    return () => {
-      clearTimeout(typingTimeout);
-      clearTimeout(messageTimeout);
-    };
-  }, [currentMessage, messages, currentMessageIndex]);
+    }, 200);
+    return () => clearInterval(interval);
+  }, [currentMessage, displayedMessage, messages]);
 
   return (
     <span>

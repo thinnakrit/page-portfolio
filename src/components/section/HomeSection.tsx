@@ -7,9 +7,15 @@ import styled from "@emotion/styled";
 import TypingEffect from "../TypingText";
 
 const HomeSection = () => {
-  const messages = ["React", "Nextjs", "Typescript", "Flutter", "Kotlin"];
+  const messages = [
+    "React  ",
+    "Nextjs  ",
+    "Typescript  ",
+    "Flutter  ",
+    "Kotlin  ",
+  ];
   return (
-    <HomeSectionWrapper>
+    <HomeSectionWrapper className="h-screen">
       <div className="home-section">
         <div className="home-section-left">
           <div className="home-section-left-content">
@@ -55,6 +61,7 @@ const TypingTextContainer = styled.div`
   white-space: nowrap;
   overflow: hidden;
   position: relative;
+  height: 30px;
 `;
 
 const HomeSectionWrapper = styled.section`
@@ -63,6 +70,11 @@ const HomeSectionWrapper = styled.section`
   justify-content: center;
   position: relative;
   z-index: 1;
+  background: linear-gradient(
+    29deg,
+    rgba(255, 255, 255, 0.8954175420168067) 42%,
+    rgba(242, 133, 0, 1) 100%
+  );
 
   .home-section {
     display: flex;
@@ -94,7 +106,6 @@ const HomeSectionWrapper = styled.section`
         flex-direction: column;
         flex: 1;
         justify-content: center;
-        align-items: center;
         padding: 40px;
       }
 
