@@ -49,45 +49,40 @@ export default function Home() {
     <PageWrapper>
       <MenuLeftWrapper className="hidden md:flex">
         <a className="menu-header">THINNAKRIT</a>
-        <button className="menu-sub" onClick={() => scrollToSection("home")}>
+        <a className="menu-sub" onClick={() => scrollToSection("home")}>
           HOME
-        </button>
-        <button
-          className="menu-sub"
-          onClick={() => scrollToSection("about-me")}
-        >
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("about-me")}>
           ABOUT ME
-        </button>
-        <button className="menu-sub" onClick={() => scrollToSection("skills")}>
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("skills")}>
           SKILLS
-        </button>
-        <button className="menu-sub" onClick={() => scrollToSection("blog")}>
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("blog")}>
           BLOG
-        </button>
-        <button className="menu-sub" onClick={() => scrollToSection("contact")}>
+        </a>
+        <a className="menu-sub" onClick={() => scrollToSection("contact")}>
           CONTACT
-        </button>
+        </a>
       </MenuLeftWrapper>
-      <button
+      <a
         className="flex md:hidden flex-col justify-center items-center
       fixed bottom-5 left-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
-      font-bold border-1 border-solid border-black
-      z-50
+      font-bold border-1 border-solid border-black z-50
       "
-        onClick={handleClickPrev}
+        onClick={() => handleClickPrev()}
       >
         Prev
-      </button>
-      <button
+      </a>
+      <a
         className="flex md:hidden flex-col justify-center items-center
       fixed bottom-5 right-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
-      font-bold border-1 border-solid border-black
-      z-50
+      font-bold border-1 border-solid border-black z-50
       "
-        onClick={handleClickNext}
+        onClick={() => handleClickNext()}
       >
         Next
-      </button>
+      </a>
       <ContentWrapper>
         <div id="home">
           <HomeSection />
