@@ -11,22 +11,6 @@ const TypingText = styled.div`
   text-decoration: underline;
 `;
 
-const Cursor = styled.span`
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 3px;
-  height: 20px;
-  background: black;
-  animation: blink 0.75s step-end infinite;
-
-  @keyframes blink {
-    50% {
-      background-color: transparent;
-    }
-  }
-`;
-
 const TypingEffect: React.FC<TypingEffectProps> = ({ messages }) => {
   const [currentMessageIndex, setCurrentMessageIndex] = useState<number>(0);
   const [displayedMessage, setDisplayedMessage] = useState<string>("");
