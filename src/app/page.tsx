@@ -7,6 +7,7 @@ import { useState } from "react";
 import AboutMeSection from "~/components/section/AboutMeSection";
 import BlogSection from "~/components/section/BlogSection";
 import ContactSection from "~/components/section/ContactSection";
+import ExperienceSection from "~/components/section/ExperienceSection";
 import HomeSection from "~/components/section/HomeSection";
 import SkillSection from "~/components/section/SkillSection";
 
@@ -15,9 +16,9 @@ export default function Home() {
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
-    setCurrentMenu(id);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
+      setCurrentMenu(id);
     }
   };
 
@@ -26,8 +27,10 @@ export default function Home() {
       scrollToSection("home");
     } else if (currentMenu === "skills") {
       scrollToSection("about-me");
-    } else if (currentMenu === "blog") {
+    } else if (currentMenu === "experience") {
       scrollToSection("skills");
+    } else if (currentMenu === "blog") {
+      scrollToSection("experience");
     } else if (currentMenu === "contact") {
       scrollToSection("blog");
     }
@@ -39,6 +42,8 @@ export default function Home() {
     } else if (currentMenu === "about-me") {
       scrollToSection("skills");
     } else if (currentMenu === "skills") {
+      scrollToSection("experience");
+    } else if (currentMenu === "experience") {
       scrollToSection("blog");
     } else if (currentMenu === "blog") {
       scrollToSection("contact");
@@ -48,24 +53,27 @@ export default function Home() {
   return (
     <PageWrapper>
       <MenuLeftWrapper className="hidden md:flex">
-        <a className="menu-header">THINNAKRIT</a>
-        <a className="menu-sub" onClick={() => scrollToSection("home")}>
+        <div className="menu-header">THINNAKRIT</div>
+        <div className="menu-sub" onClick={() => scrollToSection("home")}>
           HOME
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("about-me")}>
+        </div>
+        <div className="menu-sub" onClick={() => scrollToSection("about-me")}>
           ABOUT ME
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("skills")}>
+        </div>
+        <div className="menu-sub" onClick={() => scrollToSection("skills")}>
           SKILLS
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("blog")}>
+        </div>
+        <div className="menu-sub" onClick={() => scrollToSection("experience")}>
+          EXPERIENCE
+        </div>
+        <div className="menu-sub" onClick={() => scrollToSection("blog")}>
           BLOG
-        </a>
-        <a className="menu-sub" onClick={() => scrollToSection("contact")}>
+        </div>
+        <div className="menu-sub" onClick={() => scrollToSection("contact")}>
           CONTACT
-        </a>
+        </div>
       </MenuLeftWrapper>
-      <a
+      <div
         className="flex md:hidden flex-col justify-center items-center
       fixed bottom-5 left-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
       font-bold border-1 border-solid border-black z-50
@@ -73,8 +81,8 @@ export default function Home() {
         onClick={() => handleClickPrev()}
       >
         Prev
-      </a>
-      <a
+      </div>
+      <div
         className="flex md:hidden flex-col justify-center items-center
       fixed bottom-5 right-5 bg-white p-4 shadow-2xl rounded-full cursor-pointer
       font-bold border-1 border-solid border-black z-50
@@ -82,7 +90,7 @@ export default function Home() {
         onClick={() => handleClickNext()}
       >
         Next
-      </a>
+      </div>
       <ContentWrapper>
         <div id="home">
           <HomeSection />
@@ -92,6 +100,9 @@ export default function Home() {
         </div>
         <div id="skills">
           <SkillSection />
+        </div>
+        <div id="experience">
+          <ExperienceSection />
         </div>
         <div id="blog">
           <BlogSection />

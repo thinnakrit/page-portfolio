@@ -1,0 +1,35 @@
+{
+  "tabnine.experimentalAutoImports": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit"
+  },
+  "prettier.singleQuote": true,
+  "prettier.printWidth": 120,
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.trailingComma": "none",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  "editor.tabSize": 2,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "workbench.tree.enableStickyScroll": true,
+  "notebook.stickyScroll.enabled": true,
+  "editor.stickyScroll.enabled": true,
+  "css.lint.unknownAtRules": "ignore"
+}

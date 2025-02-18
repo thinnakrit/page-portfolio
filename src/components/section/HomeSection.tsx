@@ -49,7 +49,7 @@ const HomeSection = () => {
         <div className="home-section-right relative z-10">
           <div
             className="block md:hidden absolute z-20 bg-white top-0 text-[24px] border-1
-          border-solid border-black p-2 shadow-xl font-bold px-8 right-0
+          border-solid border-black p-2 shadow-xl font-bold px-8 right-0 w-full
           "
           >
             Thinnakrit Knoo-Aksorn

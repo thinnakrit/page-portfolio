@@ -8,6 +8,15 @@ const ContactSection = () => {
     <ContactSectionWrapper className="min-h-screen">
       <h1 className="font-bold text-[32px]">Get in touch</h1>
       <div className="head-line"></div>
+      <div className="flex items-center justify-center">
+        <iframe
+          className="min-h-screen h-full w-full max-w-[600px]"
+          allowFullScreen
+          src="https://docs.google.com/forms/d/e/1FAIpQLScOHZsVlivNDUgxvhOMRabTyMoW-cCLjnNKxUfR-ZYVES5_Uw/viewform?embedded=true"
+        >
+          กำลังโหลด…
+        </iframe>
+      </div>
     </ContactSectionWrapper>
   );
 };
@@ -15,7 +24,7 @@ const ContactSection = () => {
 export default ContactSection;
 
 const ContactSectionWrapper = styled.section`
-  background: #ffffff;
+  background: #e1e1e1ff;
   position: relative;
   z-index: 2;
   padding: 40px;

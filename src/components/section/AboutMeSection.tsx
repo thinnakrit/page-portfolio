@@ -155,7 +155,7 @@ const AboutMeSectionWrapper = styled.section`
     background: #ffffff;
     padding: 16px;
     max-width: 400px;
-    min-height: 400px;
+    max-height: 400px;
 
     .about-me-detail-photo-source {
       position: relative;
